@@ -17,23 +17,32 @@
 </head>
 
 <body class="font-sans antialiased">
-    <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+    <div
+        class="min-h-screen bg-gray-100 dark:bg-gradient-to-b dark:from-gray-950 dark:via-black dark:to-gray-900 text-gray-900 dark:text-gray-100">
+
+        {{-- Navigation --}}
         @include('layouts.navigation')
 
-        <!-- Page Heading -->
+        {{-- Page Heading --}}
         @isset($header)
-            <header class="bg-white dark:bg-gray-800 shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    {{ $header }}
+            <header class="border-b border-gray-200 dark:border-gray-800 bg-white/90 dark:bg-gray-900/60 backdrop-blur">
+                <div class="max-w-7xl mx-auto py-5 px-4 sm:px-6 lg:px-8">
+                    <h2 class="text-xl font-semibold tracking-tight">
+                        {{ $header }}
+                    </h2>
                 </div>
             </header>
         @endisset
 
-        <!-- Page Content -->
-        <main>
-            {{ $slot }}
+        {{-- Page Content --}}
+        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div
+                class="bg-white dark:bg-gray-900/40 backdrop-blur rounded-xl shadow-lg p-6 border border-gray-200 dark:border-gray-800">
+                {{ $slot }}
+            </div>
         </main>
     </div>
+
 </body>
 
 </html>
